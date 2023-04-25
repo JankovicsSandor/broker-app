@@ -1,0 +1,13 @@
+.layout-sidebar {
+    position: fixed;
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 5rem);
+    left: 0;
+    top: 5rem;
+    -webkit-user-select: none;
+    user-select: none;
+    background: #ffffff;
+    z-index: 999;
+}

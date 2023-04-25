@@ -1,0 +1,14 @@
+.content-outlet-wrapper {
+    margin-left: 14rem;
+    padding-top: 5rem;
+}
+
+.layout-content{
+    border-top: 1px solid #dfe7ef;
+    overflow: auto;
+    height: calc(100vh - 5rem);
+    padding: 2rem;
+    background-color: #eff3f8;
+    border-top-left-radius: 30px;
+    box-shadow: inset 0 3px 4px #0000001a;
+}
