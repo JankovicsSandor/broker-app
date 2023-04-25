@@ -30,7 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss",
+              "src/styles/layout.scss",
+              "src/styles/fontawesome/css/fontawesome.min.css",
+              "src/styles/fontawesome/css/solid.min.css"
             ],
             "scripts": []
           },
