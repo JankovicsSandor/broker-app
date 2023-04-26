@@ -1,0 +1,18 @@
+.nameHolder {
+    width: 10rem;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.profile {
+    align-items: center;
+}
+
+.profile img {
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* IE fix: removes blue border */

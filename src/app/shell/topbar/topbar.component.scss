@@ -1,6 +1,5 @@
 .layout-topbar {
     height: 5rem;
-    padding: 0 2rem 0 1rem;
     position: fixed;
     left: 0;
     top: 0;
@@ -11,7 +10,21 @@
     background-color: #ffffff;
 }
 
-.logo{
+.logo {
     width: 70px;
     height: 70px;
+}
+
+.actions {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    margin-right: 2rem;
+    font-size: 24px;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }

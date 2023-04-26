@@ -1,0 +1,17 @@
+<div class="flex mb-3 profile">
+    <ng-container *ngIf=" actualUser$|async as loggedInUser else loading">
+        <img [src]="loggedInUser.profilePicture" class="profile">
+        <div>
+            {{loggedInUser.firstName}} {{loggedInUser.lastName}}
+        </div>
+    </ng-container>
+
+</div>
+
+<ng-template #loading>
+    <p-skeleton shape="circle" size="2rem"></p-skeleton>
+    <div class="nameHolder flex">
+        <p-skeleton borderRadius="16px" width="10rem"></p-skeleton>
+        {{actualUser$|async|json}}
+    </div>
+</ng-template>

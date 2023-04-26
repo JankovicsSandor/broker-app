@@ -17,6 +17,11 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
+    "paths": {
+      "@state": [
+        "projects/state/src/public-api"
+      ]
+    },
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [
