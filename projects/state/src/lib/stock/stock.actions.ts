@@ -2,7 +2,7 @@ import { createAction, props } from "@ngrx/store";
 import { Stock } from "./stock.state";
 
 //Insert
-export const insertStockAction = createAction("[Stock] Set Selected Stock", props<Stock>());
+export const insertStockAction = createAction("[Stock] Insert Stock", props<Stock>());
 
 //Update
 export const setSelectedStockAction = createAction("[Stock] Set Selected Stock", props<{ stockSymbol: string }>());

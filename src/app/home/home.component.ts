@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { insertStockAction, selectAllStocks, State, Stock } from '@state';
+import { insertStockAction, selectAllStocks, AppState, Stock } from '@state';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { insertStockAction, selectAllStocks, State, Stock } from '@state';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<AppState>) {
     this.store.select(selectAllStocks).subscribe((val) => console.log(val));
 
   }

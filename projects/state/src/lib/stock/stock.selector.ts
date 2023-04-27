@@ -1,11 +1,11 @@
 import { createSelector } from "@ngrx/store";
 import { StockState } from "./stock.state";
-import { State } from "../core";
+import { AppState } from "../core";
 
-export const selectStockState = (state: State) => state.stock;
+export const selectStockState = (state: AppState) => state.stock;
 
 
-export const getSelectedId = createSelector(
+export const getSelectedStockSymbol = createSelector(
     selectStockState,
     (state: StockState) => state.selectedStockSymbol
 );

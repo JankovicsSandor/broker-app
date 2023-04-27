@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State, User, selectUserProps } from '@state';
+import { AppState, User, selectUserProps } from '@state';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ProfilePictureComponent {
   actualUser$: Observable<User>;
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<AppState>) {
     this.actualUser$ = this.store.select(selectUserProps);
   }
 }

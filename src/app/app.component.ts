@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State, setUser } from '@state';
+import { AppState, setUser } from '@state';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { State, setUser } from '@state';
 export class AppComponent implements OnInit {
   title = 'broker-app';
 
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<AppState>) {
 
   }
   ngOnInit(): void {

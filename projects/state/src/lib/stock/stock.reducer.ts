@@ -12,10 +12,9 @@ export const stockReducer = createReducer(
     on(insertStockAction, (state, { symbol, buyPrice, sellPrice, companyName }) => {
         return adapter.addOne(<Stock>{ symbol, buyPrice, sellPrice, companyName }, state);
     }),
-    on(setSelectedStockAction, (state, { stockSymbol }) => ({
-        ...state,
-        selectedStockSymbol: stockSymbol
-    })),
+    on(setSelectedStockAction, (state, { stockSymbol }) => {
+        return { ...state, selectedStockSymbol: stockSymbol }
+    }),
     on(updateStockBuyPriceAction, (state, { stockSymbol, buyPrice }) => {
         return adapter.updateOne({ id: stockSymbol, changes: { buyPrice: buyPrice } }, state);
     }),

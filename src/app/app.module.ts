@@ -8,20 +8,20 @@ import { SidebarComponent } from './shell/sidebar/sidebar.component';
 import { ProfilePictureComponent } from './shell/profile-picture/profile-picture.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { StoreModule } from '@ngrx/store';
-import { userReducer,stockReducer } from '@state';
+import { userReducer, stockReducer } from '@state';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     SidebarComponent,
-    ProfilePictureComponent
+    ProfilePictureComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SkeletonModule,
-    StoreModule.forRoot({ user: userReducer,stock:stockReducer  }),
+    StoreModule.forRoot({ user: userReducer, stock: stockReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

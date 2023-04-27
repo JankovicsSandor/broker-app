@@ -12,8 +12,7 @@ export interface Stock {
 }
 
 
-export function selecStockTicker(a: Stock): string {
-    //In this case this would be optional since primary key is id
+export function selectStockTicker(a: Stock): string {
     return a.symbol;
 }
 
@@ -22,6 +21,6 @@ export function sortByName(a: Stock, b: Stock): number {
 }
 
 export const adapter: EntityAdapter<Stock> = createEntityAdapter<Stock>({
-    selectId: selecStockTicker,
+    selectId: selectStockTicker,
     sortComparer: sortByName,
 });
