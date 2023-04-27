@@ -1,8 +1,8 @@
 import { createReducer, on } from "@ngrx/store";
-import { UserState } from "./user.state";
+import { User } from "./user.state";
 import { clearUser, setUser } from "./user.actions";
 
-export const initialState: UserState = {
+export const initialState: User = {
     firstName: '',
     lastName: '',
     email: '',
