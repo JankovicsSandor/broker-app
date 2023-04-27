@@ -2,7 +2,7 @@ import { createReducer, on } from "@ngrx/store";
 import { User } from "./user.state";
 import { clearUser, setUser } from "./user.actions";
 
-export const initialState: User = {
+export const userInitialState: User = {
     firstName: '',
     lastName: '',
     email: '',
@@ -10,7 +10,7 @@ export const initialState: User = {
 };
 
 export const userReducer = createReducer(
-    initialState,
+    userInitialState,
     on(setUser, (state, { firstName, lastName, email, profilePicture }) => ({
         ...state,
         firstName: firstName,
@@ -18,5 +18,5 @@ export const userReducer = createReducer(
         email: email,
         profilePicture: profilePicture,
     })),
-    on(clearUser, () => initialState)
+    on(clearUser, () => userInitialState)
 );

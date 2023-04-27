@@ -1,5 +1,6 @@
 export interface TickerState {
     ticker: Ticker | null
+    isLoading: boolean
 }
 
 
