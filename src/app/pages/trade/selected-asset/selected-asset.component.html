@@ -1,43 +1,36 @@
 <ng-container *ngIf="selectedStockVM$|async as stockVm">
     <div *ngIf="!stockVm.loading else loading">
-        <div class="flex">
-            <p-card [header]="stockVm.ticker!.symbol" class="flex-1">
-                <p class="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error
-                    repudiandae
-                    numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis
-                    esse, cupiditate neque
-                    quas!
-                </p>
-            </p-card>
-            <p-card class="flex-1">
-                <p class="m-0">
 
-                </p>
-            </p-card>
-        </div>
-        <div class="flex">
-            <p-card class="flex-3">
-                <p class="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error
-                    repudiandae
-                    numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis
-                    esse, cupiditate neque
-                    quas!
-                </p>
-            </p-card>
-            <div class="flex-1">
-                <p-card header="Details">
+        <div class="trade-container">
+            <div class="holding-container">
+                <p-card [header]="stockVm.ticker!.symbol">
                     <p class="m-0">
-
-                    </p>
-                </p-card>
-                <p-card>
-                    <p class="m-0">
-Buy/Sell
+                        holding-container
                     </p>
                 </p-card>
             </div>
+
+            <div class="stat-container">
+                <p-card [header]="stockVm.ticker!.symbol">
+                    <p class="m-0">
+                        stat-container
+                    </p>
+                </p-card>
+            </div>
+            <div class="chart-container">
+                <p-card [header]="stockVm.ticker!.symbol">
+                    <p class="m-0">
+                        chart-container
+                    </p>
+                </p-card>
+            </div>
+            <div class="sidebar-container">
+                <p-card [header]="stockVm.ticker!.symbol">
+                    <p class="m-0">
+                    </p>
+                </p-card>
+            </div>
+
         </div>
 
         {{stockVm.ticker|json}}

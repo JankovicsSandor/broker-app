@@ -1,0 +1,25 @@
+.trade-container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.holding-container{
+    grid-column: span 5;
+}
+
+.stat-container{
+    grid-column: span 7;
+}
+
+.chart-container{
+    grid-column: span 8;
+}
+
+.sidebar-container{
+    grid-column: span 4;
+}
+
+::ng-deep .trade-container .p-card{
+    height: 100%;
+}
