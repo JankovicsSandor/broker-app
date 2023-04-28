@@ -9,6 +9,8 @@ import { ProfilePictureComponent } from './shell/profile-picture/profile-picture
 import { SkeletonModule } from 'primeng/skeleton';
 import { StoreModule } from '@ngrx/store';
 import { userReducer, stockReducer } from '@state';
+import { DataProviderModule } from '@data-provider';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { userReducer, stockReducer } from '@state';
     AppRoutingModule,
     SkeletonModule,
     StoreModule.forRoot({ user: userReducer, stock: stockReducer }),
+    EffectsModule.forRoot(),
+    DataProviderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

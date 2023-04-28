@@ -20,6 +20,9 @@
     "paths": {
       "@state": [
         "projects/state/src/public-api"
+      ],
+      "@data-provider": [
+        "projects/data-provider/src/public-api"
       ]
     },
     "module": "ES2022",
