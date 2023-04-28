@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SelectedAssetRoutingModule } from './selected-asset-routing.module';
 import { SelectedAssetComponent } from './selected-asset.component';
-
+import { ProgressBarModule } from 'primeng/progressbar';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,9 @@ import { SelectedAssetComponent } from './selected-asset.component';
   ],
   imports: [
     CommonModule,
-    SelectedAssetRoutingModule
+    SelectedAssetRoutingModule,
+    ProgressBarModule,
+    CardModule
   ]
 })
 export class SelectedAssetModule { }

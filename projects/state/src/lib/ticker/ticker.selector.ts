@@ -1,7 +1,11 @@
-import { createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { TickerState } from "./ticker.state";
+import { tickerFeatureName } from "./ticker.reducer";
 
-export const selectTickerState = (state: TickerState) => state;
+// feature selector
+export const selectTickerState = createFeatureSelector<TickerState>(
+    tickerFeatureName
+);
 
 export const getTickerIsLoading = createSelector(
     selectTickerState,
@@ -12,3 +16,10 @@ export const getTicker = createSelector(
     selectTickerState,
     (state: TickerState) => state.ticker
 );
+
+// view model selector
+export const getTickerPageViewModel = createSelector(
+    getTicker,
+    getTickerIsLoading,
+    (ticker, loading) => ({ ticker, loading })
+  );

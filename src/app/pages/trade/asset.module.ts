@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AssetRoutingModule } from './asset-routing.module';
 import { AssetComponent } from './asset.component';
 import { StoreModule } from '@ngrx/store';
-import { TickerEffects, tickerReducer } from '@state';
+import { TickerEffects, tickerFeatureName, tickerReducer } from '@state';
 import { EffectsModule } from '@ngrx/effects';
 import { SelectAssetService } from './services/select-asset.service';
 
@@ -16,7 +16,7 @@ import { SelectAssetService } from './services/select-asset.service';
   imports: [
     CommonModule,
     AssetRoutingModule,
-    StoreModule.forFeature("Assets", {selected:tickerReducer}),
+    StoreModule.forFeature(tickerFeatureName, tickerReducer),
     EffectsModule.forFeature([TickerEffects])
   ],
   providers: [SelectAssetService]

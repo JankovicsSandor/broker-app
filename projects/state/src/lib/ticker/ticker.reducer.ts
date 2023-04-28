@@ -2,6 +2,7 @@ import { createReducer, on } from "@ngrx/store";
 import { TickerState } from "./ticker.state";
 import { clearSelectedTicker, selectTickerLoadFinishedFail, selectTickerLoadFinishedSuccess, selectTickerLoadInitiated } from "./ticker.actions";
 
+export const tickerFeatureName = "assets";
 export const tickerInitialState: TickerState = { ticker: null, isLoading: false }
 
 
