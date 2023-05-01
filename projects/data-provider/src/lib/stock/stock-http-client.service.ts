@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { STOCK_MOCK_DATA } from './mock-database/database.class';
+import { STOCK_MOCK_DATA } from '../mock-database/database.class';
 import { delay, map, pipe } from 'rxjs';
 
 @Injectable()

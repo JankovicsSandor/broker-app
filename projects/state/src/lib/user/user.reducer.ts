@@ -14,7 +14,10 @@ export const userReducer = createReducer(
     userInitialState,
     on(setUser, (state, { user }) => ({
         ...state,
-        user
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        profilePicture: user.profilePicture,
     })),
     on(clearUser, () => userInitialState)
 );
