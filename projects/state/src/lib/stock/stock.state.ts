@@ -1,7 +1,8 @@
-import { EntityAdapter, EntityState, createEntityAdapter } from "@ngrx/entity";
+import { EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 
-export interface StockState extends EntityState<Stock> {
+export interface StockState {
     selectedStockSymbol: string | null;
+    stocks: Stock[];
 }
 
 export interface Stock {
@@ -10,17 +11,3 @@ export interface Stock {
     sellPrice: number;
     companyName: string;
 }
-
-
-export function selectStockTicker(a: Stock): string {
-    return a.symbol;
-}
-
-export function sortByName(a: Stock, b: Stock): number {
-    return a.companyName.localeCompare(b.companyName);
-}
-
-export const adapter: EntityAdapter<Stock> = createEntityAdapter<Stock>({
-    selectId: selectStockTicker,
-    sortComparer: sortByName,
-});

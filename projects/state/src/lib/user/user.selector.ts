@@ -16,3 +16,8 @@ export const selectUserWallet = createSelector({
     user: selectUser,
     transactions: selectUserOpenTransactions
 })
+
+export const selectUserBalance = createSelector(
+    selectUser,
+    (state: User) => state.balance
+)

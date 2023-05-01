@@ -1,0 +1,22 @@
+<p-table [value]="assetList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Symbol</th>
+            <th>Company name</th>
+            <th>Buy Price</th>
+            <th>Sell Price</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{ product.symbol }}</td>
+            <td>{{ product.companyName }}</td>
+            <td>{{ product.buyPrice  }}</td>
+            <td>{{ product.sellPrice }}</td>
+            <td>
+                <button (click)="buyProduct(product)">Buy</button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

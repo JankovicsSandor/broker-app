@@ -7,19 +7,23 @@ import { StoreModule } from '@ngrx/store';
 import { TickerEffects, tickerFeatureName, tickerReducer } from '@state';
 import { EffectsModule } from '@ngrx/effects';
 import { SelectAssetService } from './services/select-asset.service';
-
+import { AssetListComponent } from './asset-list/asset-list.component';
+import { TableModule } from 'primeng/table';
+import { TradeService } from './services/trade.service';
 
 @NgModule({
   declarations: [
-    AssetComponent
+    AssetComponent,
+    AssetListComponent
   ],
   imports: [
     CommonModule,
     AssetRoutingModule,
+    TableModule,
     StoreModule.forFeature(tickerFeatureName, tickerReducer),
     EffectsModule.forFeature([TickerEffects])
   ],
-  providers: [SelectAssetService]
+  providers: [SelectAssetService,TradeService]
 })
 export class AssetModule {
   constructor(private assetService: SelectAssetService) { }

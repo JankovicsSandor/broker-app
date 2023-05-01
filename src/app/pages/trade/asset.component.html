@@ -1,1 +1,4 @@
-<p>asset works!</p>
+<ng-container *ngIf="stockList$|async as list">
+    <app-asset-list [assetList]="list" (buyAction)="performBuyAction($event)"></app-asset-list>
+</ng-container>
+<button (click)="addStock()">stock</button>

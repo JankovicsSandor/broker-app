@@ -13,7 +13,7 @@ import { DataProviderModule } from '@data-provider';
 import { EffectsModule } from '@ngrx/effects';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,7 @@ import { MessageService } from 'primeng/api';
     StoreModule.forRoot({ user: userReducer, stock: stockReducer,openTransactions:transactionReducer }),
     EffectsModule.forRoot([TransactionEffects]),
     DataProviderModule,
-
+    BrowserAnimationsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -2,8 +2,8 @@ import { createAction, props } from "@ngrx/store";
 import { Stock } from "./stock.state";
 
 //Insert
-export const insertStockAction = createAction("[Stock] Insert Stock", props<Stock>());
-
+export const insertStockAction = createAction("[Stock] Insert one Stock", props<{ stock: Stock }>());
+export const setStockAction = createAction("[Stock] Set Stock", props<{ stocks: Stock[] }>());
 //Update
 export const setSelectedStockAction = createAction("[Stock] Set Selected Stock", props<{ stockSymbol: string }>());
 export const updateStockSellPriceAction = createAction("[Stock] Set Stock Sell Price", props<{ stockSymbol: string, sellPrice: number }>());
