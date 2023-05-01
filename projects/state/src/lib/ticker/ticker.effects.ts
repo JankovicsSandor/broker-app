@@ -11,7 +11,7 @@ export class TickerEffects {
     loadSelectedTicker$ = createEffect(() => this.actions$.pipe(
         ofType(selectTickerLoadInitiated),
         mergeMap(({ tickerSymbol }) => this.stockService.getSelectedStockData(tickerSymbol).pipe(
-            map((symbolData) => selectTickerLoadFinishedSuccess(symbolData)),
+            map((symbolData) => selectTickerLoadFinishedSuccess({ ticker: symbolData })),
             catchError(() => {
                 this.router.navigate(['trade']);
                 console.error("Symbol not found");

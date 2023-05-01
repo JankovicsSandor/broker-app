@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState, setUser } from '@state';
+import { AppState, User, setUser } from '@state';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +15,14 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     this.store.dispatch(setUser({
-      firstName: "Don",
-      lastName: "John",
-      email: "john.doe@gmail.com",
-      profilePicture: "assets/profile.jpg"
+      user: <User>
+        {
+          firstName: "Don",
+          lastName: "John",
+          email: "john.doe@gmail.com",
+          profilePicture: "assets/profile.jpg",
+          balance: 0
+        }
     }));
     // this.store.dispatch(setUser())
   }

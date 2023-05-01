@@ -12,15 +12,11 @@ export const tickerReducer = createReducer(
         ticker: null,
         isLoading: true
     })),
-    on(selectTickerLoadFinishedSuccess, (state, { symbol, companyName, buyPrice, sellPrice, preMarketPrice, previousClosePrice, openPrice,
-        dayMin, dayMax, yearMin, yearMax, marketCap, forwardDividend, exDividendDate }) => ({
-            ...state,
-            isLoading: false,
-            ticker: {
-                symbol, companyName, buyPrice, sellPrice, preMarketPrice, previousClosePrice, openPrice,
-                dayMin, dayMax, yearMin, yearMax, marketCap, forwardDividend, exDividendDate
-            }
-        })),
+    on(selectTickerLoadFinishedSuccess, (state, { ticker }) => ({
+        ...state,
+        isLoading: false,
+        ticker
+    })),
     on(selectTickerLoadFinishedFail, (_) => ({
         ticker: null,
         isLoading: false
