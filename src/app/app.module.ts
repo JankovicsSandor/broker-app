@@ -8,9 +8,11 @@ import { SidebarComponent } from './shell/sidebar/sidebar.component';
 import { ProfilePictureComponent } from './shell/profile-picture/profile-picture.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { StoreModule } from '@ngrx/store';
-import { userReducer, stockReducer } from '@state';
+import { userReducer, stockReducer, transactionReducer, TransactionEffects } from '@state';
 import { DataProviderModule } from '@data-provider';
 import { EffectsModule } from '@ngrx/effects';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { EffectsModule } from '@ngrx/effects';
     BrowserModule,
     AppRoutingModule,
     SkeletonModule,
-    StoreModule.forRoot({ user: userReducer, stock: stockReducer }),
-    EffectsModule.forRoot(),
-    DataProviderModule
+    ToastModule,
+    StoreModule.forRoot({ user: userReducer, stock: stockReducer,openTransactions:transactionReducer }),
+    EffectsModule.forRoot([TransactionEffects]),
+    DataProviderModule,
+
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

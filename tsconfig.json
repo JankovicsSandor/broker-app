@@ -23,6 +23,9 @@
       ],
       "@data-provider": [
         "projects/data-provider/src/public-api"
+      ],
+      "@helper-functions": [
+        "projects/helper-functions/src/public-api"
       ]
     },
     "module": "ES2022",

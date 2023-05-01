@@ -1,0 +1,18 @@
+.wallet-container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.holding-container{
+    grid-column: span 5;
+}
+
+.transaction-container{
+    grid-column: span 12;
+}
+
+
+::ng-deep .trade-container .p-card{
+    height: 100%;
+}

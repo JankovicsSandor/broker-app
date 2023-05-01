@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { StockHttpClientService } from './stock-http-client.service';
+import { StockHttpClientService } from './stock/stock-http-client.service';
+import { TransactionHttpClientService } from './transaction/transaction-http-client.service';
 
 
 
 @NgModule({
-  providers: [StockHttpClientService]
+  providers: [StockHttpClientService, TransactionHttpClientService]
 })
 export class DataProviderModule { }
