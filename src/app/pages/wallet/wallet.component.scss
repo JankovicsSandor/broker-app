@@ -4,15 +4,27 @@
     gap: 16px;
 }
 
-.holding-container{
+.holding-container {
     grid-column: span 5;
 }
 
-.transaction-container{
+.transaction-container {
     grid-column: span 12;
 }
 
+.balance {
+    text-align: center;
+    margin: 0.5rem 0rem;
+}
 
-::ng-deep .trade-container .p-card{
+.balance-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    padding: 1.25rem;
+}
+
+
+::ng-deep .trade-container .p-card {
     height: 100%;
 }

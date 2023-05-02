@@ -1,10 +1,13 @@
 <ng-container *ngIf="walletUserTransaction$|async as userTransaction">
     <div class="wallet-container">
         <div class="holding-container">
-            <p-card [header]="userTransaction.user.balance+' EUR'">
-                <p class="m-0">
-                    holding-container
-                </p>
+            <p-card>
+                <ng-template pTemplate="header">
+                    <div class="balance-header">
+                        <i class="fa-solid fa-coins"></i>  Available balance  <i class="fa-solid fa-coins"></i>
+                    </div>
+                </ng-template>
+                <h1 class="balance"> {{userTransaction.user.balance| currency:'EUR'}}</h1>
             </p-card>
 
         </div>

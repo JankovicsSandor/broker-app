@@ -10,9 +10,9 @@
     <ng-template pTemplate="body" let-product>
         <tr>
             <td>{{ product.symbol }}</td>
-            <td>{{ product.buyPrice }}</td>
-            <td>{{ product.sellPrice }}</td>
-            <td>
+            <td>{{ product.buyPrice | number:'1.0-2'}}</td>
+            <td>{{ product.sellPrice| number:'1.0-2' }}</td>
+            <td [ngClass]="product.changePercent>0 ? 'greenText' : 'redText' ">
                 {{product.changePercent|percent:'1.0-3'}}
             </td>
         </tr>
