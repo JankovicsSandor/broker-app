@@ -6,6 +6,7 @@ import { WalletComponent } from './wallet.component';
 import { CardModule } from 'primeng/card';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { TransactionComponent } from './transaction/transaction.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TransactionComponent } from './transaction/transaction.component';
     CommonModule,
     WalletRoutingModule,
     CardModule,
-    ProgressBarModule
+    ProgressBarModule,
+    TableModule
   ]
 })
 export class WalletModule { }

@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
-import { Stock, StockState } from "./stock.state";
-import { clearSelectedStockAction, insertStockAction, setSelectedStockAction, setStockAction, updateStockBuyPriceAction } from "./stock.actions";
+import { StockState } from "./stock.state";
+import { clearSelectedStockAction, insertStockAction, setSelectedStockAction, setStockAction, updateStockBuyPriceAction, updateStockSellPriceAction } from "./stock.actions";
 
 
 export const stockInitialState: StockState = { selectedStockSymbol: null, stocks: [] }
@@ -18,7 +18,10 @@ export const stockReducer = createReducer(
         ...state, selectedStockSymbol: stockSymbol
     })),
     on(updateStockBuyPriceAction, (state, { stockSymbol, buyPrice }) => ({
-        ...state,stocks:state.stocks.map((stock)=>stock.symbol===stockSymbol?{...stock,buyPrice}:stock)
+        ...state, stocks: state.stocks.map((stock) => stock.symbol === stockSymbol ? { ...stock, buyPrice } : stock)
+    })),
+    on(updateStockSellPriceAction, (state, { stockSymbol, sellPrice }) => ({
+        ...state, stocks: state.stocks.map((stock) => stock.symbol === stockSymbol ? { ...stock, sellPrice } : stock)
     })),
     on(clearSelectedStockAction, (state) => ({
         ...state,

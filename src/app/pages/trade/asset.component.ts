@@ -27,7 +27,7 @@ export class AssetComponent implements OnInit {
   }
 
   performBuyAction(stock: Stock) {
-    let action = <NewTransaction>{ actionPrice: stock.buyPrice, amount: 1, direction: "BUY", symbol: stock.symbol, transactionDate: new Date() };
+    let action = <NewTransaction>{ buyPrice: stock.buyPrice, sellPrice: stock.sellPrice, amount: 1, direction: "BUY", symbol: stock.symbol, transactionDate: new Date() };
     this.tradeService.performTrade(action);
   }
 

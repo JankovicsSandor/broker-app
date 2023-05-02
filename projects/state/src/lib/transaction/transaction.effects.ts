@@ -15,7 +15,7 @@ export class TransactionEffects {
         ofType(addNewTransactionInitiated),
         withLatestFrom(this.store.select(selectUserBalance)),
         mergeMap(([{ transaction }, userBalance]) => {
-            let totalPrice = transaction.actionPrice * transaction.amount;
+            let totalPrice = transaction.buyPrice * transaction.amount;
             if (userBalance >= totalPrice) {
                 return this.transactionService.addNewTransaction(transaction).pipe(
                     mergeMap((resultData) => {

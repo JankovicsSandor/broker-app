@@ -1,5 +1,3 @@
-import { EntityAdapter, createEntityAdapter } from "@ngrx/entity";
-
 export interface StockState {
     selectedStockSymbol: string | null;
     stocks: Stock[];

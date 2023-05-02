@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
 @Injectable()
 export class TickerEffects {
 
-    loadSelectedTicker$ = createEffect(() => this.actions$.pipe(
+    loadSelectedTickerEffect$ = createEffect(() => this.actions$.pipe(
         ofType(selectTickerLoadInitiated),
         mergeMap(({ tickerSymbol }) => this.stockService.getSelectedStockData(tickerSymbol).pipe(
             map((symbolData) => selectTickerLoadFinishedSuccess({ ticker: symbolData })),

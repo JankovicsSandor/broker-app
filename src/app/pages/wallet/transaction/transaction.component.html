@@ -1,1 +1,20 @@
-{{transactions|json}}
+<p-table [value]="transactions" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Symbol</th>
+            <th>Buy Price</th>
+            <th>Sell Price</th>
+            <th>Change</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{ product.symbol }}</td>
+            <td>{{ product.buyPrice }}</td>
+            <td>{{ product.sellPrice }}</td>
+            <td>
+                {{product.changePercent|percent:'1.0-3'}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
